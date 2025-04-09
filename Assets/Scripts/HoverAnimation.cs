@@ -1,33 +1,28 @@
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.EventSystems;
+using TMPro;
 
-public class HoverAnimation : MonoBehaviour
-{
-    public UIDocument doc;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void OnEnable()
-    {
-        var root = doc.rootVisualElement;
+public class HoverAnimation : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
+    [SerializeField] private TMP_Text textComponent;
+    [SerializeField] private Color normalColor = Color.white;
+    [SerializeField] private Color hoverColor = Color.yellow;
+    [SerializeField] private float hoverScale = 1.05f;
 
-        var textoA = root.Q<Label>("PlayButton");
-        var textoB = root.Q<Label>("PlayHoverButton");
+    private Vector3 originalScale;
 
-        textoB.style.display = DisplayStyle.None;
+    void Start() {
+        textComponent = GetComponent<TMP_Text>();
 
-        textoA.RegisterCallback<MouseEnterEvent>(evt => {
-            textoA.style.display = DisplayStyle.None;
-            textoB.style.display = DisplayStyle.Flex;
-        });
-
-        textoB.RegisterCallback<MouseLeaveEvent>(evt => {
-            textoB.style.display = DisplayStyle.None;
-            textoA.style.display = DisplayStyle.Flex;
-        });
+        originalScale = textComponent.transform.localScale;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void OnPointerEnter(PointerEventData eventData) {
+        textComponent.color = hoverColor;
+        textComponent.transform.localScale = originalScale * hoverScale;
+    }
+
+    public void OnPointerExit(PointerEventData eventData) {
+        textComponent.color = normalColor;
+        textComponent.transform.localScale = originalScale;
     }
 }

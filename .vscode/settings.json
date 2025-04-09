@@ -1,0 +1,10 @@
+{
+    "omnisharp.useModernNet": false,
+    "omnisharp.path": "latest",
+    "omnisharp.monoPath": "/usr/lib/mono",
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": true
+    }
+}
