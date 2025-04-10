@@ -19,6 +19,7 @@ public class HoverAnimation : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     public void OnPointerEnter(PointerEventData eventData) {
         textComponent.color = hoverColor;
         textComponent.transform.localScale = originalScale * hoverScale;
+        AudioManager.Instance.PlayMenuHover();
     }
 
     public void OnPointerExit(PointerEventData eventData) {
