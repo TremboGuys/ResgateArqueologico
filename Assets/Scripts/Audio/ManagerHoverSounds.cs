@@ -1,18 +1,20 @@
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour {
-    public static AudioManager Instance { get; private set; }
+public class ManagerHoverSounds : MonoBehaviour {
+    public static ManagerHoverSounds Instance { get; private set; }
 
     [Header("Menu Sounds")]
     [SerializeField] private AudioClip menuHoverSound;
 
-    private AudioSource audioSource;
+    private AudioSource source;
 
     private void Awake() {
         if (Instance == null) {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            audioSource = GetComponent<AudioSource>();
+            source = GetComponent<AudioSource>();
+            Debug.Log("Este é o source: " + source);
+            OverallAudio.Instance.RegisterAudioSource(source);
         } else {
             Destroy(gameObject);
         }
@@ -20,7 +22,7 @@ public class AudioManager : MonoBehaviour {
 
     public void PlayMenuHover() {
         if (menuHoverSound != null) {
-            audioSource.PlayOneShot(menuHoverSound);
+            source.PlayOneShot(menuHoverSound);
         }
     }
 }
