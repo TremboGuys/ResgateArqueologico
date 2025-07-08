@@ -27,9 +27,9 @@ public class QuizService : MonoBehaviour
 
         string json = webRequest.downloadHandler.text;
 
-        Debug.Log(json);
-
         Quiz quiz = JsonUtility.FromJson<Quiz>(json);
+
+        quiz.Shuffle();
 
         ManagerQuiz.OnQuizReceived(quiz);
     }
