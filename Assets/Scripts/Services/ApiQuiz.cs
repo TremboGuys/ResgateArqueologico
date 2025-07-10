@@ -31,6 +31,8 @@ public class QuizService : MonoBehaviour
 
         quiz.Shuffle();
 
+        Debug.Log("API chamada");
+
         ManagerQuiz.OnQuizReceived(quiz);
     }
 }
