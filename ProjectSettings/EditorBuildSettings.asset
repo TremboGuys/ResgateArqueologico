@@ -8,9 +8,18 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 7df6ef282e0bd5047b8c8289f2aa595c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/QuizScene.unity
     guid: 20a2104739beed34f92cc6216c0efca1
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: d511d51b7efab4101ab952e824853354
+  - enabled: 1
+    path: Assets/Scenes/OptionsMenu.unity
+    guid: e1c2b1acc13f5d42e83492ba5cb9b7e8
+  - enabled: 1
+    path: Assets/Scenes/Quiz.unity
+    guid: f886f81a392e4ec19b4b930e626fdb6f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

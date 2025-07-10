@@ -13,8 +13,8 @@ public class ManagerHoverSounds : MonoBehaviour {
             Instance = this;
             DontDestroyOnLoad(gameObject);
             source = GetComponent<AudioSource>();
-            Debug.Log("Este é o source: " + source);
-            OverallAudio.Instance.RegisterAudioSource(source);
+            // Debug.Log("Este é o source: " + source);
+            // OverallAudio.Instance.RegisterAudioSource(source);
         } else {
             Destroy(gameObject);
         }

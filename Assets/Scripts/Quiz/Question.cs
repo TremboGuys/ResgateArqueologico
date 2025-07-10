@@ -7,5 +7,5 @@ public class Question
     public string alternative_b;
     public string alternative_c;
     public string alternative_d;
-    public char response;
+    public string response;
 }
