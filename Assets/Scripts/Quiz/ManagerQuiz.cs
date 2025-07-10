@@ -14,20 +14,24 @@ public class ManagerQuiz : MonoBehaviour
     [SerializeField] private GameObject quizPanel;
     [SerializeField] private GameObject correctPanel;
     [SerializeField] private GameObject wrongPanel;
+    [SerializeField] private GameObject scorePanel;
     [SerializeField] private TMP_Text theme;
     [SerializeField] private TMP_Text statement_question;
     [SerializeField] private TMP_Text alternative_a;
     [SerializeField] private TMP_Text alternative_b;
     [SerializeField] private TMP_Text alternative_c;
     [SerializeField] private TMP_Text alternative_d;
+    [SerializeField] private TMP_Text scoreText;
     private Dictionary<int, bool> user_responses = new Dictionary<int, bool>();
     private int numCurrentQuestion = 0;
+    private int numHits = 0;
 
     void Start()
     {
         StartCoroutine(QuizService.GetQuiz("http://localhost:8000/api/quizzes/1/"));
         wrongPanel.SetActive(false);
         correctPanel.SetActive(false);
+        scorePanel.SetActive(false);
     }
 
     void Awake()
@@ -85,13 +89,33 @@ public class ManagerQuiz : MonoBehaviour
         }
         else
         {
-            
+            ShowResults();
+            CreateFormUserResponses();
+        }
+    }
+
+    public void ShowResults()
+    {
+        scoreText.text = "Acertou " + numHits + "/10" + " (" + numHits * 10 + "%)";
+        scorePanel.SetActive(true);
+    }
+
+    public void CreateFormUserResponses()
+    {
+        foreach (var userResponse in user_responses)
+        {
+            PlayerQuestion pq = new PlayerQuestion(userResponse.Value, quiz.id, userResponse.Key, 7);
+            string json = JsonUtility.ToJson(pq);
+            StartCoroutine(QuizService.PostUserResponses("http://localhost:8000/api/playerQuestions/", json));
         }
     }
 
     public void UserResponse(string response)
     {
         bool correctAnswer = (response == quiz.questions[numCurrentQuestion].response) ? true : false;
+
+        if (correctAnswer) numHits++;
+
         user_responses.Add(quiz.questions[numCurrentQuestion].id, correctAnswer);
         HiddenQuizPanel(correctAnswer);
     }
