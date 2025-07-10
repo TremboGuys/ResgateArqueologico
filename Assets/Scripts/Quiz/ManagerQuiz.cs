@@ -20,7 +20,7 @@ public class ManagerQuiz : MonoBehaviour
     [SerializeField] private TMP_Text alternative_b;
     [SerializeField] private TMP_Text alternative_c;
     [SerializeField] private TMP_Text alternative_d;
-    private Dictionary<int, string> user_responses = new Dictionary<int, string>();
+    private Dictionary<int, bool> user_responses = new Dictionary<int, bool>();
     private int numCurrentQuestion = 0;
 
     void Start()
@@ -63,15 +63,6 @@ public class ManagerQuiz : MonoBehaviour
     public async void HiddenQuizPanel(bool correctAnswer)
     {
         quizPanel.SetActive(false);
-        if (numCurrentQuestion < 3)
-        {
-            numCurrentQuestion++;
-            ChangeQuestion();
-        }
-        else
-        {
-            
-        }
 
         if (correctAnswer)
         {
@@ -85,16 +76,23 @@ public class ManagerQuiz : MonoBehaviour
             await Task.Delay(2000);
             wrongPanel.SetActive(false);
         }
-        quizPanel.SetActive(true);
+
+        if (numCurrentQuestion < 3)
+        {
+            numCurrentQuestion++;
+            ChangeQuestion();
+            quizPanel.SetActive(true);
+        }
+        else
+        {
+            
+        }
     }
 
     public void UserResponse(string response)
     {
         bool correctAnswer = (response == quiz.questions[numCurrentQuestion].response) ? true : false;
-
-        Debug.Log(quiz.questions[numCurrentQuestion].response);
-        Debug.Log(correctAnswer);
-        user_responses.Add(quiz.questions[numCurrentQuestion].id, response);
+        user_responses.Add(quiz.questions[numCurrentQuestion].id, correctAnswer);
         HiddenQuizPanel(correctAnswer);
     }
 }
