@@ -499,8 +499,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Acertou 9/10 (90%)
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 079e15ff91b24b638bf4f3d85295358c, type: 2}
-  m_sharedMaterial: {fileID: 2249134440605197119, guid: 079e15ff91b24b638bf4f3d85295358c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -633,7 +633,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8252973697145308975, guid: 1355518fa8a1a301c930ad674168821c, type: 3}
+  m_Sprite: {fileID: -8252973697145308975, guid: ce7c93892530f414980204ddb517bc3d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -711,8 +711,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Quiz An\xFAbis - Conclu\xEDdo"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 079e15ff91b24b638bf4f3d85295358c, type: 2}
-  m_sharedMaterial: {fileID: 2249134440605197119, guid: 079e15ff91b24b638bf4f3d85295358c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -915,8 +915,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Sua Nota:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 079e15ff91b24b638bf4f3d85295358c, type: 2}
-  m_sharedMaterial: {fileID: 2249134440605197119, guid: 079e15ff91b24b638bf4f3d85295358c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
