@@ -5,6 +5,6 @@ using UnityEngine.SceneManagement;
 public class OpenQuiz : MonoBehaviour, IPointerClickHandler
 {
     public void OnPointerClick(PointerEventData eventData) {
-        SceneManager.LoadScene("Quiz");
+        SceneManager.LoadScene("LevelsScene");
     }
 }

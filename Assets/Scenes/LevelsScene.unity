@@ -206,8 +206,9 @@ GameObject:
   - component: {fileID: 297797849}
   - component: {fileID: 297797848}
   - component: {fileID: 297797847}
+  - component: {fileID: 297797850}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: SerpenteBicefala
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -316,6 +317,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 297797845}
   m_CullTransparentMesh: 1
+--- !u!114 &297797850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297797845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b5838d128dc11545be03e0152de25ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 297797847}
+  textButton: {fileID: 1608818394}
 --- !u!1 &472114805
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,8 +650,9 @@ GameObject:
   - component: {fileID: 1199046467}
   - component: {fileID: 1199046466}
   - component: {fileID: 1199046465}
+  - component: {fileID: 1199046468}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: MascaraWarka
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -745,6 +761,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1199046463}
   m_CullTransparentMesh: 1
+--- !u!114 &1199046468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199046463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b5838d128dc11545be03e0152de25ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1199046465}
+  textButton: {fileID: 2018957208}
 --- !u!1 &1265057112
 GameObject:
   m_ObjectHideFlags: 0
@@ -757,8 +787,9 @@ GameObject:
   - component: {fileID: 1265057116}
   - component: {fileID: 1265057115}
   - component: {fileID: 1265057114}
+  - component: {fileID: 1265057117}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Anubis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -866,6 +897,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1265057112}
   m_CullTransparentMesh: 1
+--- !u!114 &1265057117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265057112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b5838d128dc11545be03e0152de25ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1265057114}
+  textButton: {fileID: 1765180375}
 --- !u!1 &1322417150
 GameObject:
   m_ObjectHideFlags: 0
@@ -953,7 +998,7 @@ GameObject:
   - component: {fileID: 1608818395}
   - component: {fileID: 1608818394}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: TextSerpente
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -998,7 +1043,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ' '
+  m_text: ' Serpente Bicefala'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1025,8 +1070,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 80
-  m_fontSizeBase: 80
+  m_fontSize: 0
+  m_fontSizeBase: 0
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1089,7 +1134,7 @@ GameObject:
   - component: {fileID: 1765180376}
   - component: {fileID: 1765180375}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: TextAnubis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1134,7 +1179,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: I
+  m_text: Anubis
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7689e3127321a79459975817625ca817, type: 2}
   m_sharedMaterial: {fileID: 2249134440605197119, guid: 7689e3127321a79459975817625ca817, type: 2}
@@ -1161,8 +1206,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 80
-  m_fontSizeBase: 80
+  m_fontSize: 0
+  m_fontSizeBase: 0
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1213,6 +1258,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1765180373}
   m_CullTransparentMesh: 1
+--- !u!1 &1875477625
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1875477627}
+  - component: {fileID: 1875477626}
+  m_Layer: 0
+  m_Name: ManagerLevel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1875477626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875477625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ad33bbe7e50afb4d963cbee15ade6c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1875477627
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875477625}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 954.25555, y: 483.3531, z: -573.1804}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1914950186
 GameObject:
   m_ObjectHideFlags: 0
@@ -1395,7 +1484,7 @@ GameObject:
   - component: {fileID: 2018957209}
   - component: {fileID: 2018957208}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: TextWarka
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1440,7 +1529,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1
+  m_text: Warka
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1467,8 +1556,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 0
+  m_fontSizeBase: 0
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1526,3 +1615,4 @@ SceneRoots:
   - {fileID: 1072970005}
   - {fileID: 1992628639}
   - {fileID: 1914950189}
+  - {fileID: 1875477627}
