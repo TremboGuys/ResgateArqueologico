@@ -26,7 +26,7 @@ public class ManagerQuiz : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(QuizService.GetQuiz("https://resgate-arqueologico-backend.onrender.com/api/quizzes/1/"));
+        // StartCoroutine(QuizService.GetQuiz("https://resgate-arqueologico-backend.onrender.com/api/quizzes/1/"));
         wrongPanel.SetActive(false);
         correctPanel.SetActive(false);
         scorePanel.SetActive(false);
@@ -80,7 +80,7 @@ public class ManagerQuiz : MonoBehaviour
             wrongPanel.SetActive(false);
         }
 
-        if (numCurrentQuestion < 3)
+        if (numCurrentQuestion < 9)
         {
             numCurrentQuestion++;
             ChangeQuestion();

@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 36968686}
   - component: {fileID: 36968685}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Lock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 198538158556077393, guid: 0dfed6d325c17714bab078e62182be3e, type: 3}
+  m_Sprite: {fileID: 198538158556077393, guid: 2a4cbd4a4626eb6ea81479abe89e8a40, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -299,7 +299,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5978024892036894346, guid: 337c64479da94c143835486b67054b14, type: 3}
+  m_Sprite: {fileID: -5978024892036894346, guid: a5aad73544d9c9e8d9c835aa73f56c91, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -329,8 +329,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b5838d128dc11545be03e0152de25ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 297797847}
-  textButton: {fileID: 1608818394}
 --- !u!1 &472114805
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,8 +467,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: SELECIONAR FASE
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7689e3127321a79459975817625ca817, type: 2}
-  m_sharedMaterial: {fileID: 2249134440605197119, guid: 7689e3127321a79459975817625ca817, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: cbf975bb13301907fb881fd06c4fe706, type: 2}
+  m_sharedMaterial: {fileID: 2249134440605197119, guid: cbf975bb13301907fb881fd06c4fe706, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -743,7 +741,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8736422524430800029, guid: 47897d987e3708a40a4739b86d8bbec0, type: 3}
+  m_Sprite: {fileID: -8736422524430800029, guid: 08e2f5fc16bf63c57b5a033f738c291d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -773,8 +771,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b5838d128dc11545be03e0152de25ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 1199046465}
-  textButton: {fileID: 2018957208}
 --- !u!1 &1265057112
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,7 +875,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8252973697145308975, guid: ce7c93892530f414980204ddb517bc3d, type: 3}
+  m_Sprite: {fileID: -8252973697145308975, guid: 3ae841e50d85d98f4a05d91793b99056, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -906,7 +902,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1265057112}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b5838d128dc11545be03e0152de25ce, type: 3}
+  m_Script: {fileID: 11500000, guid: 71ef2d7e9c8a5500ab2073232036fe27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 1265057114}
@@ -923,7 +919,7 @@ GameObject:
   - component: {fileID: 1322417153}
   - component: {fileID: 1322417152}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: Lock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -968,7 +964,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 198538158556077393, guid: 0dfed6d325c17714bab078e62182be3e, type: 3}
+  m_Sprite: {fileID: 198538158556077393, guid: 2a4cbd4a4626eb6ea81479abe89e8a40, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1181,8 +1177,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Anubis
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7689e3127321a79459975817625ca817, type: 2}
-  m_sharedMaterial: {fileID: 2249134440605197119, guid: 7689e3127321a79459975817625ca817, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1284,7 +1280,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1875477625}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ad33bbe7e50afb4d963cbee15ade6c9, type: 3}
+  m_Script: {fileID: 11500000, guid: e090db2007af30fa8bd19a52c7d975c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1875477627
