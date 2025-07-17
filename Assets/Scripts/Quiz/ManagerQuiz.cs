@@ -26,7 +26,7 @@ public class ManagerQuiz : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(QuizService.GetQuiz("http://localhost:8000/api/quizzes/1/"));
+        StartCoroutine(QuizService.GetQuiz("https://resgate-arqueologico-backend.onrender.com/api/quizzes/1/"));
         wrongPanel.SetActive(false);
         correctPanel.SetActive(false);
         scorePanel.SetActive(false);
@@ -49,6 +49,7 @@ public class ManagerQuiz : MonoBehaviour
     public static void OnQuizReceived(Quiz json)
     {
         Instance.quiz = json;
+        Instance.theme.text = Instance.quiz.theme.ToUpper();
         Instance.ChangeQuestion();
     }
 
@@ -104,7 +105,7 @@ public class ManagerQuiz : MonoBehaviour
         {
             PlayerQuestion pq = new PlayerQuestion(userResponse.Value, quiz.id, userResponse.Key, 7);
             string json = JsonUtility.ToJson(pq);
-            StartCoroutine(QuizService.PostUserResponses("http://localhost:8000/api/playerQuestions/", json));
+            StartCoroutine(QuizService.PostUserResponses("https://resgate-arqueologico-backend.onrender.com/api/playerQuestions/", json));
         }
     }
 

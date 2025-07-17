@@ -153,7 +153,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5282759, y: 0.5}
-  m_AnchoredPosition: {x: -7.9442225, y: -44.7672}
+  m_AnchoredPosition: {x: -5.8015, y: -55}
   m_SizeDelta: {x: 389.89, y: 41.4538}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &131428618
@@ -178,8 +178,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: ANUBIS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6ade9aa954cd53f48a9bb1ebd3b52a85, type: 2}
-  m_sharedMaterial: {fileID: 4189085294788758933, guid: 6ade9aa954cd53f48a9bb1ebd3b52a85, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -673,11 +673,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 386731982}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d11eee087d2f6b441bd7f3105cec8c2b, type: 3}
+  m_Script: {fileID: 11500000, guid: ddff6c3956948e357a06e85f42043107, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 386731984}
-  textButton: {fileID: 1035475845}
+  textButton: {fileID: 1694889245}
 --- !u!1 &412570911
 GameObject:
   m_ObjectHideFlags: 0
@@ -1177,8 +1177,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: A
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7689e3127321a79459975817625ca817, type: 2}
-  m_sharedMaterial: {fileID: 2249134440605197119, guid: 7689e3127321a79459975817625ca817, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1288,7 +1288,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.064546585, y: 2.333866}
+  m_AnchoredPosition: {x: -0.065007, y: 11}
   m_SizeDelta: {x: 405.91, y: 52.7482}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &691119067
@@ -1313,8 +1313,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: QUIZ
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7689e3127321a79459975817625ca817, type: 2}
-  m_sharedMaterial: {fileID: 2249134440605197119, guid: 7689e3127321a79459975817625ca817, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1900,7 +1900,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 964784756}
-  - component: {fileID: 964784757}
   m_Layer: 5
   m_Name: Alternative_A
   m_TagString: Untagged
@@ -1928,20 +1927,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 606.89, y: 46.9365}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &964784757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 964784755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d11eee087d2f6b441bd7f3105cec8c2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button: {fileID: 1472192501}
-  textButton: {fileID: 985251627}
 --- !u!1 &978620072
 GameObject:
   m_ObjectHideFlags: 0
@@ -2555,8 +2540,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: D
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7689e3127321a79459975817625ca817, type: 2}
-  m_sharedMaterial: {fileID: 2249134440605197119, guid: 7689e3127321a79459975817625ca817, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3043,11 +3028,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1438221523}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d11eee087d2f6b441bd7f3105cec8c2b, type: 3}
+  m_Script: {fileID: 11500000, guid: ddff6c3956948e357a06e85f42043107, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 1438221525}
-  textButton: {fileID: 515218679}
+  textButton: {fileID: 1106618588}
 --- !u!1 &1458245555
 GameObject:
   m_ObjectHideFlags: 0
@@ -3295,11 +3280,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1472192499}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d11eee087d2f6b441bd7f3105cec8c2b, type: 3}
+  m_Script: {fileID: 11500000, guid: ddff6c3956948e357a06e85f42043107, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 1472192501}
-  textButton: {fileID: 985251627}
+  textButton: {fileID: 674485830}
 --- !u!1 &1633359231
 GameObject:
   m_ObjectHideFlags: 0
@@ -3506,11 +3491,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1658083880}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d11eee087d2f6b441bd7f3105cec8c2b, type: 3}
+  m_Script: {fileID: 11500000, guid: ddff6c3956948e357a06e85f42043107, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 1658083882}
-  textButton: {fileID: 267696522}
+  textButton: {fileID: 2069026447}
 --- !u!1 &1662606583
 GameObject:
   m_ObjectHideFlags: 0
@@ -3757,8 +3742,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: C
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7689e3127321a79459975817625ca817, type: 2}
-  m_sharedMaterial: {fileID: 2249134440605197119, guid: 7689e3127321a79459975817625ca817, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3870,7 +3855,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 676.8729, y: 519.62}
+  m_SizeDelta: {x: 675.2046, y: 502.0246}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1925939253
 MonoBehaviour:
@@ -4570,9 +4555,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 20
+    m_Left: 30
     m_Right: 0
-    m_Top: 20
+    m_Top: 40
     m_Bottom: 0
   m_ChildAlignment: 0
   m_Spacing: 0
@@ -4642,8 +4627,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: B
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7689e3127321a79459975817625ca817, type: 2}
-  m_sharedMaterial: {fileID: 2249134440605197119, guid: 7689e3127321a79459975817625ca817, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4929,6 +4914,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce16f84d979bd35c1a27033430808c9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  quizPanel: {fileID: 2048555351}
+  correctPanel: {fileID: 769563825}
+  wrongPanel: {fileID: 1929653474}
+  scorePanel: {fileID: 510524529}
+  theme: {fileID: 131428618}
+  statement_question: {fileID: 2054260053}
+  alternative_a: {fileID: 985251627}
+  alternative_b: {fileID: 267696522}
+  alternative_c: {fileID: 1035475845}
+  alternative_d: {fileID: 515218679}
+  scoreText: {fileID: 876948354}
 --- !u!4 &2144108897
 Transform:
   m_ObjectHideFlags: 0
