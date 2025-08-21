@@ -1,0 +1,4 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:Template name="Ranking" src="project://database/Assets/Layouts/Ranking.uxml?fileID=9197481963319205126&amp;guid=24ffbf1fb77fc774284f1d8d535386dc&amp;type=3#Ranking" />
+    <ui:Instance template="Ranking" name="Ranking" />
+</ui:UXML>

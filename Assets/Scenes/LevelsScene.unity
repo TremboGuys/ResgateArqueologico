@@ -813,7 +813,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -634, y: 0.000015259}
-  m_SizeDelta: {x: 349.714, y: 460.7338}
+  m_SizeDelta: {x: 320, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1265057114
 MonoBehaviour:
@@ -879,7 +879,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8252973697145308975, guid: ce7c93892530f414980204ddb517bc3d, type: 3}
+  m_Sprite: {fileID: 8541283594606140696, guid: 0d784d32d86c5fd4b9e8f9bba6451179, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -906,7 +906,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1265057112}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71ef2d7e9c8a5500ab2073232036fe27, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b5838d128dc11545be03e0152de25ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 1265057114}
@@ -1284,7 +1284,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1875477625}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e090db2007af30fa8bd19a52c7d975c2, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ad33bbe7e50afb4d963cbee15ade6c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1875477627
