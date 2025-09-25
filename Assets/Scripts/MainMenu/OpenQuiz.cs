@@ -6,5 +6,6 @@ public class OpenQuiz : MonoBehaviour, IPointerClickHandler
 {
     public void OnPointerClick(PointerEventData eventData) {
         SceneManager.LoadScene("LevelsScene");
+        ManagerHoverSounds.Instance.PlayMenuHover();
     }
 }

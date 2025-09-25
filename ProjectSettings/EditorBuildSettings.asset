@@ -13,19 +13,23 @@ EditorBuildSettings:
     guid: 20a2104739beed34f92cc6216c0efca1
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
-    guid: d511d51b7efab4101ab952e824853354
+    guid: ea7751ea78bb81eceb5b63e49a1abb93
   - enabled: 1
     path: Assets/Scenes/OptionsMenu.unity
-    guid: e1c2b1acc13f5d42e83492ba5cb9b7e8
+    guid: 739061c31b949d731b79fbcc6a1dde82
   - enabled: 1
     path: Assets/Scenes/Quiz.unity
-    guid: f886f81a392e4ec19b4b930e626fdb6f
+    guid: 3df372e69d6aa155cb6cdc5729bb6f08
   - enabled: 1
     path: Assets/Scenes/ScoreScreen.unity
-    guid: 710ac6302716722f5aa73e0a45e8b599
+    guid: 7b89ae86781a0ab9ea63fad498513365
   - enabled: 1
     path: Assets/Scenes/LevelsScene.unity
-    guid: 7079406e3b1453649a0e7c11a1409321
+    guid: 3a75f2ff50634ba4194400d8a0b97f47
+  - enabled: 1
+    path: Assets/Scenes/LoginScene.unity
+    guid: 87840e1ff5c4f0a1381a2a596f7554d5
   m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 9d5d8191ce17c183387cbe4c41376c6c, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
