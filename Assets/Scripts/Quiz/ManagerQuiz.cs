@@ -105,7 +105,7 @@ public class ManagerQuiz : MonoBehaviour
         {
             PlayerQuestion pq = new PlayerQuestion(userResponse.Value, quiz.id, userResponse.Key, 7);
             string json = JsonUtility.ToJson(pq);
-            StartCoroutine(QuizService.PostUserResponses("https://resgate-arqueologico-backend.onrender.com/api/playerQuestions/", json));
+            StartCoroutine(QuizService.PostUserResponses("http://localhost:8000/api/playerQuestions/", json));
         }
     }
 

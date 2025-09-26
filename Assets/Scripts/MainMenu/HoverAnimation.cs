@@ -16,13 +16,14 @@ public class HoverAnimation : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         originalScale = textComponent.transform.localScale;
     }
 
-    public void OnPointerEnter(PointerEventData eventData) {
+    public void OnPointerEnter(PointerEventData eventData)
+    {
         textComponent.color = hoverColor;
         textComponent.transform.localScale = originalScale * hoverScale;
-        ManagerHoverSounds.Instance.PlayMenuHover();
     }
 
-    public void OnPointerExit(PointerEventData eventData) {
+    public void OnPointerExit(PointerEventData eventData)
+    {
         textComponent.color = normalColor;
         textComponent.transform.localScale = originalScale;
     }
