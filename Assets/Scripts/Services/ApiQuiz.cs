@@ -27,11 +27,13 @@ public class QuizService : MonoBehaviour
 
         string json = webRequest.downloadHandler.text;
 
+        Debug.Log(json);
+
         Quiz quiz = JsonUtility.FromJson<Quiz>(json);
 
         quiz.Shuffle();
 
-        ManagerQuiz.OnQuizReceived(quiz);
+        ManagerQuiz.Instance.OnQuizReceived(quiz);
     }
 
     public static IEnumerator PostUserResponses(string uri, string json)
@@ -49,13 +51,9 @@ public class QuizService : MonoBehaviour
 
         string response = webRequest.downloadHandler.text;
 
-        if (webRequest.result == UnityWebRequest.Result.Success)
+        if (webRequest.result != UnityWebRequest.Result.Success)
         {
-            Debug.Log("Success POST: " + response);
-        }
-        else
-        {
-            Debug.Log("Error in POST: " + response);
+            Debug.LogError("Error in POST: " + response);
         }
     }
 }

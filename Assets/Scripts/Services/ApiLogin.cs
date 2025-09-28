@@ -9,7 +9,6 @@ public class LoginService : MonoBehaviour
     public static IEnumerator Login(string uri, string json)
     {
         using UnityWebRequest webRequest = new(uri, "POST");
-        Debug.Log(json);
 
         byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(json);
 
@@ -22,17 +21,21 @@ public class LoginService : MonoBehaviour
 
         string response = webRequest.downloadHandler.text;
 
-        User user = JsonUtility.FromJson<User>(response);
-
-        ManagerLogin.Instance.OnUserReceived(user);
-
         if (webRequest.result == UnityWebRequest.Result.Success)
         {
-            Debug.Log("Success POST: " + response);
+            User user = JsonUtility.FromJson<User>(response);
+            ManagerLogin.Instance.OnUserReceived(user);
         }
+
         else
         {
-            Debug.Log("Error in POST: " + response);
+            ErrorJson error = JsonUtility.FromJson<ErrorJson>(response);
+
+            if (error.username.Length > 0)
+            {
+                ManagerLogin.Instance.ShowErrorUserMessage();
+            }
+            Debug.LogError("Error in POST: " + error.username[0]);
         }
     }
 }

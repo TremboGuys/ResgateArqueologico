@@ -14,13 +14,10 @@ public class IconSelected : MonoBehaviour
     {
         Sprite sprite = Resources.Load<Sprite>("Images/" + spriteName);
 
-        Debug.Log(sprite);
-
         if (sprite != null)
         {
             imageUI.sprite = sprite;
             ManagerLogin.Instance.photoPath = spriteName;
-            Debug.Log(spriteName);
         }
         else
         {

@@ -1,14 +1,17 @@
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using System.ComponentModel;
 using System.Collections.Generic;
 using System;
 using System.Threading.Tasks;
+using System.Threading;
+using System.Collections;
 
 public class ManagerQuiz : MonoBehaviour
 {
     public static ManagerQuiz Instance { get; private set; }
-    Quiz quiz;
+    private Quiz quiz;
     [SerializeField] private GameObject quizPanel;
     [SerializeField] private GameObject correctPanel;
     [SerializeField] private GameObject wrongPanel;
@@ -20,9 +23,11 @@ public class ManagerQuiz : MonoBehaviour
     [SerializeField] private TMP_Text alternative_c;
     [SerializeField] private TMP_Text alternative_d;
     [SerializeField] private TMP_Text scoreText;
+    [SerializeField] private Image image;
     private Dictionary<int, bool> user_responses = new Dictionary<int, bool>();
     private int numCurrentQuestion = 0;
     private int numHits = 0;
+    private Coroutine timerCoroutine;
 
     void Start()
     {
@@ -46,11 +51,13 @@ public class ManagerQuiz : MonoBehaviour
         }
     }
 
-    public static void OnQuizReceived(Quiz json)
+    public void OnQuizReceived(Quiz json)
     {
         Instance.quiz = json;
         Instance.theme.text = Instance.quiz.theme.ToUpper();
         Instance.ChangeQuestion();
+        Instance.ChangeImage(Instance.quiz.image);
+        timerCoroutine = StartCoroutine(Timer(600));
     }
 
     public void ChangeQuestion()
@@ -63,10 +70,41 @@ public class ManagerQuiz : MonoBehaviour
         alternative_d.text = "D) " + q.alternative_d;
     }
 
+    public IEnumerator Timer(int time)
+    {
+        int remainingTime = time;
+
+        while (remainingTime > 0)
+        {
+            ChangeTimer(remainingTime);
+            yield return new WaitForSeconds(1f);
+            remainingTime--;
+        }
+        DisableQuizPanel();
+        ShowResults();
+        CreateFormUserResponses();
+    }
+
+    public void ChangeTimer(int remainingTime)
+    {
+        string time = "";
+        int minutes = remainingTime / 60;
+        int seconds = remainingTime % 60;
+        if (minutes < 10)
+        {
+            time += "0";
+        }
+        time += minutes.ToString() + ":";
+        if (seconds < 10)
+        {
+            time += "0";
+        }
+        time += seconds.ToString();
+    }
+
     public async void HiddenQuizPanel(bool correctAnswer)
     {
-        quizPanel.SetActive(false);
-
+        DisableQuizPanel();
         if (correctAnswer)
         {
             correctPanel.SetActive(true);
@@ -88,6 +126,10 @@ public class ManagerQuiz : MonoBehaviour
         }
         else
         {
+            if (timerCoroutine != null)
+            {
+                StopCoroutine(timerCoroutine);
+            }
             ShowResults();
             CreateFormUserResponses();
         }
@@ -95,17 +137,22 @@ public class ManagerQuiz : MonoBehaviour
 
     public void ShowResults()
     {
+        Debug.Log("ShowResults chamado!");
         scoreText.text = "Acertou " + numHits + "/10" + " (" + numHits * 10 + "%)";
         scorePanel.SetActive(true);
     }
 
     public void CreateFormUserResponses()
     {
+        PlayerQuiz playerQuiz = new(numHits, ManagerLogin.Instance.GetIdUser(), quiz.id);
+        string jsonPlayerQuiz = JsonUtility.ToJson(playerQuiz);
+        Debug.Log(jsonPlayerQuiz);
+        StartCoroutine(QuizService.PostUserResponses("http://localhost:8000/api/playerQuizzes/", jsonPlayerQuiz));
         foreach (var userResponse in user_responses)
         {
-            PlayerQuestion pq = new PlayerQuestion(userResponse.Value, quiz.id, userResponse.Key, 7);
-            string json = JsonUtility.ToJson(pq);
-            StartCoroutine(QuizService.PostUserResponses("http://localhost:8000/api/playerQuestions/", json));
+            PlayerQuestion playerQuestion = new(userResponse.Value, quiz.id, userResponse.Key, ManagerLogin.Instance.GetIdUser());
+            string jsonPlayerQuestion = JsonUtility.ToJson(playerQuestion);
+            StartCoroutine(QuizService.PostUserResponses("http://localhost:8000/api/playerQuestions/", jsonPlayerQuestion));
         }
     }
 
@@ -117,5 +164,25 @@ public class ManagerQuiz : MonoBehaviour
 
         user_responses.Add(quiz.questions[numCurrentQuestion].id, correctAnswer);
         HiddenQuizPanel(correctAnswer);
+    }
+
+    public void ChangeImage(string spriteName)
+    {
+        Sprite sprite = Resources.Load<Sprite>("Images/" + spriteName);
+
+        if (sprite != null)
+        {
+            image.sprite = sprite;
+        }
+        else
+        {
+            Debug.LogWarning("Sprite not found: " + spriteName);
+        }
+    }
+
+    public void DisableQuizPanel()
+    {
+        quizPanel.SetActive(false);
+        Debug.Log("DisableQuizPanel chamado!");
     }
 }

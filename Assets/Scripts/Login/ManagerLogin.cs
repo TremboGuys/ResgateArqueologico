@@ -1,19 +1,27 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ManagerLogin : MonoBehaviour
 {
     public static ManagerLogin Instance { get; private set; }
     public string inputUsername;
     public string photoPath = "alternativeA";
-    User user;
+    [SerializeField] private GameObject errorUserMessage;
+    private User user;
+
+    void Start()
+    {
+        errorUserMessage.SetActive(false);
+    }
 
     void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            Debug.Log(photoPath);
+            photoPath = "alternativeA";
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -36,5 +44,15 @@ public class ManagerLogin : MonoBehaviour
             string json = JsonUtility.ToJson(register);
             StartCoroutine(LoginService.Login("http://localhost:8000/api/players/", json));
         }
+    }
+
+    public void ShowErrorUserMessage()
+    {
+        errorUserMessage.SetActive(true);
+    }
+
+    public int GetIdUser()
+    {
+        return user.id;
     }
 }

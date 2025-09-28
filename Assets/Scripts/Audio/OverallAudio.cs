@@ -10,7 +10,6 @@ public class OverallAudio : MonoBehaviour
     private List<AudioSource> allAudioSources = new List<AudioSource>();
 
     void Awake() {
-        Debug.Log("OverallAudio instanciado");
         if (Instance == null) {
             Instance = this;
             DontDestroyOnLoad(gameObject);
@@ -47,7 +46,6 @@ public class OverallAudio : MonoBehaviour
     }
 
     public void RegisterAudioSource(AudioSource source) {
-        Debug.Log("Audio Source registado");
         if (!allAudioSources.Contains(source)) {
             allAudioSources.Add(source);
             source.volume = masterVolume;
@@ -62,8 +60,6 @@ public class OverallAudio : MonoBehaviour
     
     public void SetMasterVolume(float volume) {
         masterVolume = volume;
-        Debug.Log("Volume geral está em: " + masterVolume);
-        Debug.Log("O volume no PlayerPrefs está em: " + PlayerPrefs.GetFloat("volumeMaster"));
         if (volume != PlayerPrefs.GetFloat("volumeMaster")) {
             PlayerPrefs.SetFloat("volumeMaster", volume);
             PlayerPrefs.Save();

@@ -9,7 +9,6 @@ public class ButtonLogin : MonoBehaviour
     {
         button.onClick.AddListener(() =>
         {
-            Debug.Log("OnClick");
             ManagerLogin.Instance.Login();
         });
     }
