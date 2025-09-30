@@ -23,11 +23,12 @@ public class ManagerQuiz : MonoBehaviour
     [SerializeField] private TMP_Text alternative_c;
     [SerializeField] private TMP_Text alternative_d;
     [SerializeField] private TMP_Text scoreText;
-    [SerializeField] private Image image;
+    [SerializeField] private ImagesQuiz images;
     private Dictionary<int, bool> user_responses = new Dictionary<int, bool>();
     private int numCurrentQuestion = 0;
     private int numHits = 0;
     private Coroutine timerCoroutine;
+    private int remainingTime;
 
     void Start()
     {
@@ -53,10 +54,10 @@ public class ManagerQuiz : MonoBehaviour
 
     public void OnQuizReceived(Quiz json)
     {
-        Instance.quiz = json;
-        Instance.theme.text = Instance.quiz.theme.ToUpper();
-        Instance.ChangeQuestion();
-        Instance.ChangeImage(Instance.quiz.image);
+        quiz = json;
+        theme.text = Instance.quiz.theme.ToUpper();
+        ChangeQuestion();
+        images.ChangeImages(quiz.image);
         timerCoroutine = StartCoroutine(Timer(600));
     }
 
@@ -72,11 +73,11 @@ public class ManagerQuiz : MonoBehaviour
 
     public IEnumerator Timer(int time)
     {
-        int remainingTime = time;
+        remainingTime = time;
 
         while (remainingTime > 0)
         {
-            ChangeTimer(remainingTime);
+            ChangeTimerText(remainingTime);
             yield return new WaitForSeconds(1f);
             remainingTime--;
         }
@@ -85,7 +86,7 @@ public class ManagerQuiz : MonoBehaviour
         CreateFormUserResponses();
     }
 
-    public void ChangeTimer(int remainingTime)
+    public void ChangeTimerText(int remainingTime)
     {
         string time = "";
         int minutes = remainingTime / 60;
@@ -144,7 +145,7 @@ public class ManagerQuiz : MonoBehaviour
 
     public void CreateFormUserResponses()
     {
-        PlayerQuiz playerQuiz = new(numHits, ManagerLogin.Instance.GetIdUser(), quiz.id);
+        PlayerQuiz playerQuiz = new(numHits, ManagerLogin.Instance.GetIdUser(), quiz.id, CalculateScore());
         string jsonPlayerQuiz = JsonUtility.ToJson(playerQuiz);
         Debug.Log(jsonPlayerQuiz);
         StartCoroutine(QuizService.PostUserResponses("http://localhost:8000/api/playerQuizzes/", jsonPlayerQuiz));
@@ -166,23 +167,19 @@ public class ManagerQuiz : MonoBehaviour
         HiddenQuizPanel(correctAnswer);
     }
 
-    public void ChangeImage(string spriteName)
-    {
-        Sprite sprite = Resources.Load<Sprite>("Images/" + spriteName);
-
-        if (sprite != null)
-        {
-            image.sprite = sprite;
-        }
-        else
-        {
-            Debug.LogWarning("Sprite not found: " + spriteName);
-        }
-    }
-
     public void DisableQuizPanel()
     {
         quizPanel.SetActive(false);
         Debug.Log("DisableQuizPanel chamado!");
+    }
+
+    int CalculateScore()
+    {
+        int discountPerTime = 0;
+        if (remainingTime / 60 < 5)
+        {
+            discountPerTime += (5 - remainingTime / 60) * 5;
+        }
+        return numHits * quiz.xp_per_question - discountPerTime;
     }
 }

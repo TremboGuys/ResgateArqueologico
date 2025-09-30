@@ -12,16 +12,7 @@ public class IconSelected : MonoBehaviour
 
     public void ChangeImage(string spriteName)
     {
-        Sprite sprite = Resources.Load<Sprite>("Images/" + spriteName);
-
-        if (sprite != null)
-        {
-            imageUI.sprite = sprite;
-            ManagerLogin.Instance.photoPath = spriteName;
-        }
-        else
-        {
-            Debug.LogWarning("Sprite not found: " + spriteName);
-        }
+        ImageUtils imageUtils = new();
+        Sprite sprite = imageUtils.ChangeImage(spriteName);
     }
 }
