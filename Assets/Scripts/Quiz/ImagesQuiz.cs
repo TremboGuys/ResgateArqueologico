@@ -10,9 +10,6 @@ public class ImagesQuiz : MonoBehaviour
     public void ChangeImages(string spriteName)
     {
         Sprite sprite = imageUtils.ChangeImage(spriteName);
-        Debug.Log(sprite);
-        Debug.Log(imagePanel);
-        Debug.Log(imageScore);
         imagePanel.sprite = sprite;
         imageScore.sprite = sprite;
     }

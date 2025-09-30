@@ -14,5 +14,6 @@ public class IconSelected : MonoBehaviour
     {
         ImageUtils imageUtils = new();
         Sprite sprite = imageUtils.ChangeImage(spriteName);
+        imageUI.sprite = sprite;
     }
 }

@@ -1236,7 +1236,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 558763790}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca3fe7b295c370e12be023dace684d70, type: 3}
+  m_Script: {fileID: 11500000, guid: abeeb67283fe561f9a184db58279007f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   imagePanel: {fileID: 412570913}
@@ -5327,6 +5327,7 @@ MonoBehaviour:
   alternative_c: {fileID: 1035475845}
   alternative_d: {fileID: 515218679}
   scoreText: {fileID: 876948354}
+  images: {fileID: 558763791}
 --- !u!4 &2144108897
 Transform:
   m_ObjectHideFlags: 0
