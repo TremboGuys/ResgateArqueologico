@@ -56,7 +56,22 @@ public class ManagerQuiz : MonoBehaviour
     public void ChangeQuestion()
     {
         Question q = quiz.questions[numCurrentQuestion];
-        statement_question.text = (numCurrentQuestion + 1) + "- " + q.statement;
+        string text = (numCurrentQuestion + 1) + "- " + q.statement;
+        statement_question.text = text;
+        int length = text.Length;
+
+        if (length <= 80)
+        {
+           statement_question.fontSize = 40;
+        }
+        else if (length <= 150)
+        {
+            statement_question.fontSize = 32;
+        }
+        else
+        {
+            statement_question.fontSize = 26;
+        }
         alternative_a.text = "A) " + q.alternative_a;
         alternative_b.text = "B) " + q.alternative_b;
         alternative_c.text = "C) " + q.alternative_c;
