@@ -348,8 +348,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Ops...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7689e3127321a79459975817625ca817, type: 2}
-  m_sharedMaterial: {fileID: 2249134440605197119, guid: 7689e3127321a79459975817625ca817, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -652,7 +652,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2160335949537737053, guid: 814169a5de2d29343bac34d5a6dd1933, type: 3}
+  m_Sprite: {fileID: 2160335949537737053, guid: 3799ed1852761484b9329155ee8edac8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -729,8 +729,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Voc\xEA errou essa quest\xE3o, vamos melhorar e acertar a pr\xF3xima!"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7689e3127321a79459975817625ca817, type: 2}
-  m_sharedMaterial: {fileID: 2249134440605197119, guid: 7689e3127321a79459975817625ca817, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
