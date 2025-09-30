@@ -24,9 +24,9 @@ public class ManagerLevel : MonoBehaviour
         }
     }
 
-    public void ChooseLevel()
+    public void ChooseLevel(string id)
     {
-        StartCoroutine(QuizService.GetQuiz("https://resgate-arqueologico-backend.onrender.com/api/quizzes/1"));
+        StartCoroutine(QuizService.GetQuiz("http://localhost:8000/api/quizzes/" + id));
         SceneManager.LoadScene("Quiz");
     }
 }

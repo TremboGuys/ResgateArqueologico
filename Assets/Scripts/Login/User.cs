@@ -5,14 +5,14 @@ public class User
 {
     public int id;
     public string username;
-    public int xp;
+    public int score;
     public string photo;
 
-    User(int id, string username, int xp, string photo)
+    User(int id, string username, int score, string photo)
     {
         this.id = id;
         this.username = username;
-        this.xp = xp;
+        this.score = score;
         this.photo = photo;
     }
 }

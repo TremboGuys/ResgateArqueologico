@@ -3,7 +3,7 @@ using UnityEngine;
 class ManagerIcon : MonoBehaviour
 {
     public static ManagerIcon Instance { get; private set; }
-    private string[] nameImages = new string[] { "alternativeA", "AnubisMask", "dama-warka", "cobra-asteca" };
+    private string[] nameImages = new string[] { "alternativeA", "AnubisMask", "DamaWarka", "SerpenteBicefala" };
     private int indexImageSelect = 0;
     [SerializeField] private IconSelected iconInstance;
 
