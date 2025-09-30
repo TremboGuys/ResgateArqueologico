@@ -5,11 +5,14 @@ using UnityEngine.SceneManagement;
 public class CutsceneController : MonoBehaviour
 {
     public VideoPlayer videoPlayer;
-    public string nextSceneName = "MainMenu";
+    public string nextSceneName = "LoginScene";
 
     void Start()
     {
-        videoPlayer.loopPointReached += EndReached;
+        if (videoPlayer != null)
+        {
+            videoPlayer.loopPointReached += EndReached;
+        }
     }
 
     void Update()
