@@ -7,6 +7,8 @@ using System;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Collections;
+using UnityEngine.SceneManagement;
+using Unity.Mathematics;
 
 public class ManagerQuiz : MonoBehaviour
 {
@@ -22,9 +24,10 @@ public class ManagerQuiz : MonoBehaviour
     [SerializeField] private TMP_Text alternative_b;
     [SerializeField] private TMP_Text alternative_c;
     [SerializeField] private TMP_Text alternative_d;
-    [SerializeField] private TMP_Text scoreText;
+    [SerializeField] private Score score;
+    [SerializeField] private TMP_Text timerText;
     [SerializeField] private ImagesQuiz images;
-    private Dictionary<int, bool> user_responses = new Dictionary<int, bool>();
+    private Dictionary<int, bool> user_responses = new();
     private int numCurrentQuestion = 0;
     private int numHits = 0;
     private Coroutine timerCoroutine;
@@ -32,10 +35,7 @@ public class ManagerQuiz : MonoBehaviour
 
     void Start()
     {
-        // StartCoroutine(QuizService.GetQuiz("https://resgate-arqueologico-backend.onrender.com/api/quizzes/1/"));
-        wrongPanel.SetActive(false);
-        correctPanel.SetActive(false);
-        scorePanel.SetActive(false);
+        InitializeQuiz();
     }
 
     void Awake()
@@ -43,7 +43,8 @@ public class ManagerQuiz : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            PersistentManager.Register("ManagerQuiz", gameObject);
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
 
         else
@@ -52,13 +53,65 @@ public class ManagerQuiz : MonoBehaviour
         }
     }
 
+    public void InitializeQuiz()
+    {
+        wrongPanel.SetActive(false);
+        correctPanel.SetActive(false);
+        scorePanel.SetActive(false);
+    }
+
+    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "Quiz" && wrongPanel == null)
+        {
+            RestartQuiz();
+        }
+    }
+
+    public void OnPointerClickRestartQuiz()
+    {
+        SceneManager.LoadScene("Quiz");
+        StartCoroutine(QuizService.GetQuiz("https://resgate-arqueologico-backend.onrender.comapi/quizzes/" + quiz.id));
+    }
+
+    public void RestartQuiz()
+    {
+        Debug.Log("Entrou no RestartQuiz");
+        numCurrentQuestion = 0;
+        numHits = 0;
+        user_responses.Clear();
+        quizPanel = GameObject.Find("Canvas/QuizPanel");
+        Debug.Log(quizPanel);
+        correctPanel = GameObject.Find("Canvas/CorrectPanel");
+        Debug.Log(correctPanel);
+        wrongPanel = GameObject.Find("Canvas/WrongPanel");
+        Debug.Log(wrongPanel);
+        scorePanel = GameObject.Find("Canvas/ScorePanel");
+        Debug.Log(scorePanel);
+        theme = GameObject.Find("Canvas/QuizPanel/LeftPanel/TitleQuiz/Theme").GetComponent<TMP_Text>();
+        Debug.Log(theme);
+        statement_question = GameObject.Find("Canvas/QuizPanel/RightPanel/QuestionArea/Statement/StatementText").GetComponent<TMP_Text>();
+        alternative_a = GameObject.Find("Canvas/QuizPanel/RightPanel/QuestionArea/Alternative_A/Alternative_A_Text").GetComponent<TMP_Text>();
+        alternative_b = GameObject.Find("Canvas/QuizPanel/RightPanel/QuestionArea/Alternative_B/Alternative_B_Text").GetComponent<TMP_Text>();
+        alternative_c = GameObject.Find("Canvas/QuizPanel/RightPanel/QuestionArea/Alternative_C/Alternative_C_Text").GetComponent<TMP_Text>();
+        alternative_d = GameObject.Find("Canvas/QuizPanel/RightPanel/QuestionArea/Alternative_D/Alternative_D_Text").GetComponent<TMP_Text>();
+        score = GameObject.Find("Canvas/ScorePanel/MainPanel").GetComponent<Score>();
+        timerText = GameObject.Find("Canvas/QuizPanel/LeftPanel/ArtifactImage/TimerText").GetComponent<TMP_Text>();
+        images = GameObject.Find("ImagesQuiz").GetComponent<ImagesQuiz>();
+    }
+
     public void OnQuizReceived(Quiz json)
     {
+        Debug.Log(json);
         quiz = json;
         theme.text = Instance.quiz.theme.ToUpper();
+        if (theme.text.Length > 15)
+        {
+            theme.fontSize = 32;
+        }
         ChangeQuestion();
         images.ChangeImages(quiz.image);
-        timerCoroutine = StartCoroutine(Timer(600));
+        timerCoroutine = StartCoroutine(Timer(300));
     }
 
     public void ChangeQuestion()
@@ -66,13 +119,13 @@ public class ManagerQuiz : MonoBehaviour
         Question q = quiz.questions[numCurrentQuestion];
         string text = (numCurrentQuestion + 1) + "- " + q.statement;
         statement_question.text = text;
-        int length = text.Length;
+        int statementLength = text.Length;
 
-        if (length <= 80)
+        if (statementLength <= 80)
         {
-           statement_question.fontSize = 40;
+            statement_question.fontSize = 40;
         }
-        else if (length <= 150)
+        else if (statementLength <= 150)
         {
             statement_question.fontSize = 32;
         }
@@ -80,10 +133,40 @@ public class ManagerQuiz : MonoBehaviour
         {
             statement_question.fontSize = 26;
         }
-        alternative_a.text = "A) " + q.alternative_a;
-        alternative_b.text = "B) " + q.alternative_b;
-        alternative_c.text = "C) " + q.alternative_c;
-        alternative_d.text = "D) " + q.alternative_d;
+        alternative_a.text = q.alternative_a;
+        alternative_b.text = q.alternative_b;
+        alternative_c.text = q.alternative_c;
+        alternative_d.text = q.alternative_d;
+        AlternativesFontSizeCalculator();
+    }
+
+    public void AlternativesFontSizeCalculator()
+    {
+        List<TMP_Text> alternatives = new List<TMP_Text> { alternative_a, alternative_b, alternative_c, alternative_d };
+
+        int biggerLength = 0;
+
+        foreach (TMP_Text alternative in alternatives)
+        {
+            int length = alternative.text.Length;
+            biggerLength = math.max(biggerLength, length);
+        }
+
+        foreach (TMP_Text alternative in alternatives)
+        {
+            if (biggerLength <= 42)
+            {
+                alternative.fontSize = 42;
+            }
+            else if (biggerLength <= 76)
+            {
+                alternative.fontSize = 35;
+            }
+            else
+            {
+                alternative.fontSize = 30;
+            }
+        }
     }
 
     public IEnumerator Timer(int time)
@@ -97,7 +180,7 @@ public class ManagerQuiz : MonoBehaviour
             remainingTime--;
         }
         DisableQuizPanel();
-        ShowResults();
+        ShowScore();
         CreateFormUserResponses();
     }
 
@@ -116,6 +199,7 @@ public class ManagerQuiz : MonoBehaviour
             time += "0";
         }
         time += seconds.ToString();
+        timerText.text = time;
     }
 
     public async void HiddenQuizPanel(bool correctAnswer)
@@ -146,15 +230,14 @@ public class ManagerQuiz : MonoBehaviour
             {
                 StopCoroutine(timerCoroutine);
             }
-            ShowResults();
+            ShowScore();
             CreateFormUserResponses();
         }
     }
 
-    public void ShowResults()
+    public void ShowScore()
     {
-        Debug.Log("ShowResults chamado!");
-        scoreText.text = "Acertou " + numHits + "/10" + " (" + numHits * 10 + "%)";
+        score.ShowScore(quiz.theme, numHits);
         scorePanel.SetActive(true);
     }
 
@@ -163,12 +246,12 @@ public class ManagerQuiz : MonoBehaviour
         PlayerQuiz playerQuiz = new(numHits, ManagerLogin.Instance.GetIdUser(), quiz.id, CalculateScore());
         string jsonPlayerQuiz = JsonUtility.ToJson(playerQuiz);
         Debug.Log(jsonPlayerQuiz);
-        StartCoroutine(QuizService.PostUserResponses("http://localhost:8000/api/playerQuizzes/", jsonPlayerQuiz));
+        StartCoroutine(QuizService.PostUserResponses("https://resgate-arqueologico-backend.onrender.comapi/playerQuizzes/", jsonPlayerQuiz));
         foreach (var userResponse in user_responses)
         {
             PlayerQuestion playerQuestion = new(userResponse.Value, quiz.id, userResponse.Key, ManagerLogin.Instance.GetIdUser());
             string jsonPlayerQuestion = JsonUtility.ToJson(playerQuestion);
-            StartCoroutine(QuizService.PostUserResponses("http://localhost:8000/api/playerQuestions/", jsonPlayerQuestion));
+            StartCoroutine(QuizService.PostUserResponses("https://resgate-arqueologico-backend.onrender.comapi/playerQuestions/", jsonPlayerQuestion));
         }
     }
 
@@ -185,16 +268,20 @@ public class ManagerQuiz : MonoBehaviour
     public void DisableQuizPanel()
     {
         quizPanel.SetActive(false);
-        Debug.Log("DisableQuizPanel chamado!");
     }
 
     int CalculateScore()
     {
         int discountPerTime = 0;
-        if (remainingTime / 60 < 5)
+        if (remainingTime / 60 < 2)
         {
-            discountPerTime += (5 - remainingTime / 60) * 5;
+            discountPerTime += (10 - remainingTime / 60) * 10;
         }
         return numHits * quiz.xp_per_question - discountPerTime;
+    }
+
+    public int GetIdQuiz()
+    {
+        return quiz.id;
     }
 }

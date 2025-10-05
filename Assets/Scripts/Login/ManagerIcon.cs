@@ -3,7 +3,7 @@ using UnityEngine;
 class ManagerIcon : MonoBehaviour
 {
     public static ManagerIcon Instance { get; private set; }
-    private string[] nameImages = new string[] { "alternativeA", "AnubisMask", "DamaWarka", "SerpenteBicefala" };
+    private string[] nameImages = new string[] { "alternativeA", "alternativeB", "alternativeC", "alternativeD", "MaskAnubis" };
     private int indexImageSelect = 0;
     [SerializeField] private IconSelected iconInstance;
 
@@ -12,7 +12,7 @@ class ManagerIcon : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            PersistentManager.Register("ManagerIcon", gameObject);
         }
         else
         {

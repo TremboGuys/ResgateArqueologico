@@ -267,11 +267,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1195263005}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d49ee4883d4a47749939c42950bf0c70, type: 3}
+  m_Script: {fileID: 11500000, guid: 682be13d4b3d673c78a3c458c154a4c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 1195263008}
-  nextSceneName: MainMenu
+  nextSceneName: LoginScene
 --- !u!328 &1195263008
 VideoPlayer:
   m_ObjectHideFlags: 0
@@ -280,7 +280,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1195263005}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 587c75bf03c58b7428613c01603767de, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 4ba719ca854766228bbd5ef8a4265423, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 2046268233}

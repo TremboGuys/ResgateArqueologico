@@ -15,7 +15,7 @@ public class ManagerLevel : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            PersistentManager.Register("ManagerLevel", gameObject);
         }
 
         else
@@ -26,7 +26,7 @@ public class ManagerLevel : MonoBehaviour
 
     public void ChooseLevel(string id)
     {
-        StartCoroutine(QuizService.GetQuiz("http://localhost:8000/api/quizzes/" + id));
+        StartCoroutine(QuizService.GetQuiz("https://resgate-arqueologico-backend.onrender.comapi/quizzes/" + id));
         SceneManager.LoadScene("Quiz");
     }
 }

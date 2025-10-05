@@ -12,6 +12,12 @@ public class InputUsername : MonoBehaviour
 
     private void OnTextSubmitted(string text)
     {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            ManagerLogin.Instance.inputUsername = text;
+            ManagerLogin.Instance.Login();
+            return;
+        }
         ManagerLogin.Instance.inputUsername = text;
     }
 }

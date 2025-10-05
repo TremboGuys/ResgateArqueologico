@@ -1,26 +1,14 @@
 using UnityEngine;
 using UnityEngine.Networking;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class QuizService : MonoBehaviour
 {
-    // public static QuizService Instance { get; private set; }
-
-    // void Awake()
-    // {
-    //     if (Instance == null)
-    //     {
-    //         Instance = this;
-    //         DontDestroyOnLoad(gameObject);
-    //     }
-    //     else
-    //     {
-    //         Destroy(gameObject);
-    //     }
-    // }
 
     public static IEnumerator GetQuiz(string uri)
     {
+        Debug.Log("Entrou no GetQuiz");
         using UnityWebRequest webRequest = UnityWebRequest.Get(uri);
 
         yield return webRequest.SendWebRequest();

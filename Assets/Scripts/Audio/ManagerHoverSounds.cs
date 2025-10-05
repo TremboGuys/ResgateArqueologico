@@ -11,7 +11,7 @@ public class ManagerHoverSounds : MonoBehaviour {
     private void Awake() {
         if (Instance == null) {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            PersistentManager.Register("ManagerHoverSounds", gameObject);
             source = GetComponent<AudioSource>();
         } else {
             Destroy(gameObject);

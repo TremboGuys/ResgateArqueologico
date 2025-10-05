@@ -22,7 +22,7 @@ public class ManagerLogin : MonoBehaviour
         {
             Instance = this;
             photoPath = "alternativeA";
-            DontDestroyOnLoad(gameObject);
+            PersistentManager.Register("ManagerLogin", gameObject);
         }
         else
         {
@@ -38,11 +38,12 @@ public class ManagerLogin : MonoBehaviour
 
     public void Login()
     {
+        Debug.Log(inputUsername);
         if (inputUsername != null)
         {
             UserRegister register = new(inputUsername, photoPath);
             string json = JsonUtility.ToJson(register);
-            StartCoroutine(LoginService.Login("http://localhost:8000/api/players/", json));
+            StartCoroutine(LoginService.Login("https://resgate-arqueologico-backend.onrender.comapi/players/", json));
         }
     }
 
@@ -54,5 +55,10 @@ public class ManagerLogin : MonoBehaviour
     public int GetIdUser()
     {
         return user.id;
+    }
+
+    public string GetUsername()
+    {
+        return user.username;
     }
 }

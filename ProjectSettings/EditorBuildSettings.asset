@@ -13,28 +13,31 @@ EditorBuildSettings:
     guid: 20a2104739beed34f92cc6216c0efca1
   - enabled: 1
     path: Assets/Scenes/IntroScene.unity
-    guid: 5dac88c36c775b947a6ac7d446e57090
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 18dc00bcbe776974da33623a3863b536
-  - enabled: 1
-    path: Assets/Scenes/OptionsMenu.unity
-    guid: a1b0fc77df4a6c641923703967f4af52
-  - enabled: 1
-    path: Assets/Scenes/CreditsScene.unity
-    guid: 258527370c4e26a40b4652d137b8ef75
-  - enabled: 1
-    path: Assets/Scenes/Quiz.unity
-    guid: 97438b2230b778f4f96bf23c6113d500
-  - enabled: 1
-    path: Assets/Scenes/ScoreScreen.unity
-    guid: 9027a256245e40545bf768a38106a7f9
-  - enabled: 1
-    path: Assets/Scenes/LevelsScene.unity
-    guid: 7079406e3b1453649a0e7c11a1409321
+    guid: 4a84256cd952feea1a7a53aeea920e16
   - enabled: 1
     path: Assets/Scenes/LoginScene.unity
-    guid: f9b7035593528444ead797683f76b44d
+    guid: 83ccd6aed417712b29f12c0eff417ddb
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 1730f593e008bc03a853700c951b275c
+  - enabled: 1
+    path: Assets/Scenes/LevelsScene.unity
+    guid: e5a53a53ab257b2e2afeef5aa6f0335c
+  - enabled: 0
+    path: Assets/Scenes/OptionsMenu.unity
+    guid: d0667f40d6d505868889401984b0ca1c
+  - enabled: 1
+    path: Assets/Scenes/CreditsScene.unity
+    guid: a4c7e6993583711d8a947def44de43c2
+  - enabled: 1
+    path: Assets/Scenes/Quiz.unity
+    guid: 7c2c45455fde73361982ed010400ddd2
+  - enabled: 0
+    path: Assets/Scenes/ScoreScreen.unity
+    guid: f7849b5903c02cbd6a2b82daca353d8c
+  - enabled: 1
+    path: Assets/Scenes/RankingScene.unity
+    guid: 6cdbd6fdb9bb9e307918292e5c248872
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 9d5d8191ce17c183387cbe4c41376c6c, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
