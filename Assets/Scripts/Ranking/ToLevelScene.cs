@@ -6,6 +6,8 @@ public class ToLevelScene : MonoBehaviour, IPointerClickHandler
 {
     public void OnPointerClick(PointerEventData eventData)
     {
-        SceneManager.LoadScene("LevelScene");
+        SceneManager.LoadScene("LevelsScene");
+        PersistentManager.Remove("ManagerQuiz");
+        PersistentManager.Remove("ManagerRanking");
     }
 }

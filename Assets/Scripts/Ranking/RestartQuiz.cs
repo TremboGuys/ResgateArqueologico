@@ -6,7 +6,9 @@ public class RestartQuiz : MonoBehaviour, IPointerClickHandler
 {
     public void OnPointerClick(PointerEventData eventData)
     {
-        ManagerQuiz.Instance.OnPointerClickRestartQuiz();
+        PersistentManager.Instance.SetQuizId(ManagerQuiz.Instance.GetIdQuiz());
+        PersistentManager.Remove("ManagerQuiz");
         PersistentManager.Remove("ManagerRanking");
+        SceneManager.LoadScene("Quiz");
     }
 }

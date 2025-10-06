@@ -8,7 +8,7 @@ public class ManagerRanking : MonoBehaviour
 
     void Start()
     {
-        string url = "https://resgate-arqueologico-backend.onrender.comapi/playerQuizzes?quiz=" + ManagerQuiz.Instance.GetIdQuiz() +"&player=" + ManagerLogin.Instance.GetIdUser();
+        string url = "https://resgate-arqueologico-backend.onrender.com/api/playerQuizzes?quiz=" + ManagerQuiz.Instance.GetIdQuiz() +"&player=" + ManagerLogin.Instance.GetIdUser();
         StartCoroutine(RankingService.GetRanking(url));
     }
 
@@ -40,7 +40,6 @@ public class ManagerRanking : MonoBehaviour
                 rankingEntries[i].position.text = pr.position;
             }
             rankingEntries[i].username.text = pr.username;
-            Debug.Log(rankingEntries[i].username.text);
             rankingEntries[i].score.text = pr.score;
             if (pr.username == ManagerLogin.Instance.GetUsername())
             {

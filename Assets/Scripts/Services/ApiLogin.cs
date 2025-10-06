@@ -31,6 +31,7 @@ public class LoginService : MonoBehaviour
         {
             ErrorJson error = JsonUtility.FromJson<ErrorJson>(response);
 
+            Debug.Log(error);
             if (error.username.Length > 0)
             {
                 ManagerLogin.Instance.ShowErrorUserMessage();

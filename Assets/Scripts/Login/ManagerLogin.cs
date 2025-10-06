@@ -38,12 +38,11 @@ public class ManagerLogin : MonoBehaviour
 
     public void Login()
     {
-        Debug.Log(inputUsername);
         if (inputUsername != null)
         {
             UserRegister register = new(inputUsername, photoPath);
             string json = JsonUtility.ToJson(register);
-            StartCoroutine(LoginService.Login("https://resgate-arqueologico-backend.onrender.comapi/players/", json));
+            StartCoroutine(LoginService.Login("https://resgate-arqueologico-backend.onrender.com/api/players/", json));
         }
     }
 
